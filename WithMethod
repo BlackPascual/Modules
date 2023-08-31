@@ -1,0 +1,9 @@
+;WITH Records(ID, Name, LeaderID, Rank) AS(
+
+	SELECT ID, Name, LeaderID, 0 AS Rank FROM Students WHERE LeaderID IS NULL
+	UNION ALL
+
+	SELECT O.ID, O.Name, O.LeaderID, P.Rank+1 FROM Students O
+	INNER JOIN Records P ON P.ID = O.LeaderID
+)
+SELECT ID, Name, LeaderID, Rank FROM Records ORDER BY Rank;

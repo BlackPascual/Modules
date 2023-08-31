@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Playlist {
+    
+    public static void main(String[] args) {
+        
+        LinkedList<String> MyFavorite = new LinkedList<>();
+        
+            MyFavorite.add("Lego House");
+            MyFavorite.add("Basket Case");
+            MyFavorite.add("Gorilla");
+            MyFavorite.add("Sunday Morning");
+            MyFavorite.add("Die4u");
+            
+        LinkedList<String> MyArtist = new LinkedList<>();
+        
+            MyArtist.add("Ed Sheeran");
+            MyArtist.add("Green Day");
+            MyArtist.add("Bruno Mars");
+            MyArtist.add("Maroon 5");
+            MyArtist.add("Bring Me The Horizon");
+        
+        LinkedList<String> Queue = new LinkedList<>();
+        
+        System.out.println("Songs: " + MyFavorite);
+        System.out.println("Artists: " + MyArtist);
+        
+        for (int i = 0; i < MyArtist.size(); i++){
+            
+            Queue.add(MyFavorite.get(i) + " - " + MyArtist.get(i));
+            
+        }
+        
+        for (String i : Queue) {
+            
+            System.out.println(i);
+        }
+            
+
+    }
+    
+}
